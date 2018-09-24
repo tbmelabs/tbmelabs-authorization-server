@@ -2,6 +2,7 @@
 .classpath
 .factorypath
 .settings/
+.springBeans
 
 # Intellij
 .idea/
@@ -14,9 +15,6 @@
 # Maven
 log/
 target/
-
-# Spring
-.springBeans
 
 # Built application files
 *.apk
