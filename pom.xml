@@ -5,7 +5,7 @@
     <artifactId>authorization-server</artifactId>
 
     <name>TBME Labs | Authorization-Server</name>
-    <description>OAuth2 server allowing users to authenticate across multiple applications.</description>
+    <description>OAuth2 authorization server allowing users to authenticate across multiple applications.</description>
     <url>https://github.com/tbmelabs/tbmelabs-authorization-server</url>
 
     <licenses>
@@ -240,6 +240,30 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+
+            <!-- https://mvnrepository.com/artifact/com.spotify/dockerfile-maven-plugin -->
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>dockerfile-maven-plugin</artifactId>
+
+                <executions>
+                    <execution>
+                        <id>default</id>
+                        <goals>
+                            <goal>build</goal>
+                            <goal>push</goal>
+                        </goals>
+                    </execution>
+                </executions>
+
+                <configuration>
+                    <repository>tbmelabs/tbmelabs-authorization-server</repository>
+                    <tag>${project.version}</tag>
+                    <buildArgs>
+                        <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
+                    </buildArgs>
+                </configuration>
             </plugin>
         </plugins>
     </build>

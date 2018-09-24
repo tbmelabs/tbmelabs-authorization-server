@@ -1,6 +1,6 @@
 # TBME Labs Authorization Server
 
- OAuth2 server allowing users to authenticate across multiple applications.
+ OAuth2 authorization server allowing users to authenticate across multiple applications.
 
 [![Build Status](https://travis-ci.org/tbmelabs/tbmelabs-authorization-server.svg?branch=master)](https://travis-ci.org/tbmelabs/tbmelabs-authorization-server)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/d9eae98d8d1d4915b8f56ab8e7ce8d7b)](https://www.codacy.com/app/bbortt_2/tbmelabs-authorization-server?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=tbmelabs/tbmelabs-authorization-server&amp;utm_campaign=Badge_Grade)
