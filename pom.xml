@@ -33,7 +33,7 @@
 
     <properties>
         <!-- General configuration -->
-        <exec.mainClass>ch.tbmelabs.tv.core.authorizationserver.Application</exec.mainClass>
+        <exec.mainClass>ch.tbmelabs.authorizationserver.Application</exec.mainClass>
 
         <!-- TBME Labs specific configuration -->
         <ch.tbmelabs.version>1.0.0-SNAPSHOT</ch.tbmelabs.version>

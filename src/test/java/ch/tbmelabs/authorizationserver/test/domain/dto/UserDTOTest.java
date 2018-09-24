@@ -1,0 +1,25 @@
+package ch.tbmelabs.authorizationserver.test.domain.dto;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import org.apache.commons.lang3.RandomStringUtils;
+import org.junit.Test;
+import ch.tbmelabs.authorizationserver.domain.User;
+import ch.tbmelabs.authorizationserver.domain.dto.UserDTO;
+
+public class UserDTOTest {
+
+  public static User createTestUser() {
+    User testUser = new User();
+    testUser.setUsername(RandomStringUtils.randomAlphabetic(11));
+    testUser.setEmail(testUser.getUsername() + "@tbme.tv");
+    testUser.setPassword(RandomStringUtils.random(60));
+    testUser.setConfirmation(testUser.getPassword());
+
+    return testUser;
+  }
+
+  @Test
+  public void userDTOShouldHavePublicConstructor() {
+    assertThat(new UserDTO()).isNotNull();
+  }
+}

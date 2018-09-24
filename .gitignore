@@ -15,6 +15,9 @@
 log/
 target/
 
+# Spring
+.springBeans
+
 # Built application files
 *.apk
 *.ap_
