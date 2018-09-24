@@ -33,7 +33,7 @@
 
     <properties>
         <!-- General configuration -->
-        <exec.mainClass>ch.tbmelabs.tv.core.authorizationserver.Application</exec.mainClass>
+        <exec.mainClass>ch.tbmelabs.authorizationserver.Application</exec.mainClass>
 
         <!-- TBME Labs specific configuration -->
         <ch.tbmelabs.version>1.0.0-SNAPSHOT</ch.tbmelabs.version>
@@ -129,13 +129,6 @@
             <groupId>javax.interceptor</groupId>
             <artifactId>javax.interceptor-api</artifactId>
             <version>${javax.interceptor.javax.interceptor-api.version}</version>
-        </dependency>
-
-        <!-- DOTO: Update on release -->
-        <!-- https://oss.sonatype.org/content/repositories/snapshots/ch/tbmelabs/server-constants/ -->
-        <dependency>
-            <groupId>ch.tbmelabs</groupId>
-            <artifactId>server-constants</artifactId>
         </dependency>
 
         <!-- DOTO: Update on release -->
