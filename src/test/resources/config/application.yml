@@ -9,6 +9,7 @@ eureka:
       user:
         name: actuator-admin
         password: Welcome$18
+        role: ACTUATOR
 server:
   address: localhost
   servlet:
