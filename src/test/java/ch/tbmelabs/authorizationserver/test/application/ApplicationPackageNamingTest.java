@@ -6,7 +6,7 @@ import ch.tbmelabs.authorizationserver.Application;
 
 public class ApplicationPackageNamingTest {
 
-  private static final String APPLICATION_PACKAGE_NAME = "ch.tbmelabs.tv.core.authorizationserver";
+  private static final String APPLICATION_PACKAGE_NAME = "ch.tbmelabs.authorizationserver";
 
   @Test
   public void applicationPackageShouldMatchNamingConvention() {

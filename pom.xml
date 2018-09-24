@@ -132,13 +132,6 @@
         </dependency>
 
         <!-- DOTO: Update on release -->
-        <!-- https://oss.sonatype.org/content/repositories/snapshots/ch/tbmelabs/server-constants/ -->
-        <dependency>
-            <groupId>ch.tbmelabs</groupId>
-            <artifactId>server-constants</artifactId>
-        </dependency>
-
-        <!-- DOTO: Update on release -->
         <!-- https://oss.sonatype.org/content/repositories/snapshots/ch/tbmelabs/actuator-endpoints-security-utils/ -->
         <dependency>
             <groupId>ch.tbmelabs</groupId>
