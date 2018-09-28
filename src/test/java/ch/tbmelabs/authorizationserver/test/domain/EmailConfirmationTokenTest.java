@@ -2,6 +2,10 @@ package ch.tbmelabs.authorizationserver.test.domain;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.MockitoAnnotations.initMocks;
+
+import ch.tbmelabs.authorizationserver.domain.AbstractAuditingEntity;
+import ch.tbmelabs.authorizationserver.domain.EmailConfirmationToken;
+import ch.tbmelabs.authorizationserver.domain.User;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Random;
@@ -12,9 +16,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 import org.mockito.Spy;
-import ch.tbmelabs.authorizationserver.domain.AbstractAuditingEntity;
-import ch.tbmelabs.authorizationserver.domain.EmailConfirmationToken;
-import ch.tbmelabs.authorizationserver.domain.User;
 
 public class EmailConfirmationTokenTest {
 

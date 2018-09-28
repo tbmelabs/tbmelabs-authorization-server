@@ -3,6 +3,11 @@ package ch.tbmelabs.authorizationserver.test.domain.association;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.MockitoAnnotations.initMocks;
+
+import ch.tbmelabs.authorizationserver.domain.Role;
+import ch.tbmelabs.authorizationserver.domain.User;
+import ch.tbmelabs.authorizationserver.domain.association.userrole.UserRoleAssociation;
+import ch.tbmelabs.authorizationserver.domain.association.userrole.UserRoleAssociationId;
 import java.util.Random;
 import javax.persistence.Entity;
 import javax.persistence.IdClass;
@@ -10,10 +15,6 @@ import javax.persistence.Table;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
-import ch.tbmelabs.authorizationserver.domain.Role;
-import ch.tbmelabs.authorizationserver.domain.User;
-import ch.tbmelabs.authorizationserver.domain.association.userrole.UserRoleAssociation;
-import ch.tbmelabs.authorizationserver.domain.association.userrole.UserRoleAssociationId;
 
 public class UserRoleAssociationTest {
 

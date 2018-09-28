@@ -7,6 +7,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
 import ch.tbmelabs.authorizationserver.domain.User;
 import ch.tbmelabs.authorizationserver.domain.dto.UserDTO;
 import ch.tbmelabs.authorizationserver.domain.dto.mapper.UserMapper;

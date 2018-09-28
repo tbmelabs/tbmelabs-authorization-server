@@ -1,14 +1,14 @@
 package ch.tbmelabs.authorizationserver.web.signup;
 
+import ch.tbmelabs.authorizationserver.configuration.ApplicationProperties;
+import ch.tbmelabs.authorizationserver.exception.EmailConfirmationTokenNotFoundException;
+import ch.tbmelabs.authorizationserver.service.signup.EmailConfirmationTokenService;
 import java.io.IOException;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ch.tbmelabs.authorizationserver.configuration.ApplicationProperties;
-import ch.tbmelabs.authorizationserver.exception.EmailConfirmationTokenNotFoundException;
-import ch.tbmelabs.authorizationserver.service.signup.EmailConfirmationTokenService;
 
 @RestController
 @RequestMapping("/signup")

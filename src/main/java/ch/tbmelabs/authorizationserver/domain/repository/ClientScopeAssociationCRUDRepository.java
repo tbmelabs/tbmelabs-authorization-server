@@ -1,10 +1,10 @@
 package ch.tbmelabs.authorizationserver.domain.repository;
 
+import ch.tbmelabs.authorizationserver.domain.Client;
+import ch.tbmelabs.authorizationserver.domain.association.clientscope.ClientScopeAssociation;
 import java.util.Set;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import ch.tbmelabs.authorizationserver.domain.Client;
-import ch.tbmelabs.authorizationserver.domain.association.clientscope.ClientScopeAssociation;
 
 @Repository
 public interface ClientScopeAssociationCRUDRepository

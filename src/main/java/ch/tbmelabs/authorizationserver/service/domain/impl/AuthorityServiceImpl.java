@@ -1,9 +1,9 @@
 package ch.tbmelabs.authorizationserver.service.domain.impl;
 
-import org.springframework.stereotype.Service;
 import ch.tbmelabs.authorizationserver.domain.Authority;
 import ch.tbmelabs.authorizationserver.domain.repository.AuthorityCRUDRepository;
 import ch.tbmelabs.authorizationserver.service.domain.AuthorityService;
+import org.springframework.stereotype.Service;
 
 @Service
 public class AuthorityServiceImpl implements AuthorityService {

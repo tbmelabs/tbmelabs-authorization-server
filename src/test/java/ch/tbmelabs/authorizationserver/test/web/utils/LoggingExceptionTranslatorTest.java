@@ -5,6 +5,8 @@ import static org.assertj.core.api.Assertions.entry;
 import static org.mockito.Mockito.doCallRealMethod;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.MockitoAnnotations.initMocks;
+
+import ch.tbmelabs.authorizationserver.web.utils.LoggingExceptionTranslator;
 import java.util.Collections;
 import org.apache.http.HttpStatus;
 import org.junit.Before;
@@ -17,7 +19,6 @@ import org.springframework.security.oauth2.provider.error.DefaultWebResponseExce
 import org.springframework.security.web.util.ThrowableAnalyzer;
 import org.springframework.stereotype.Component;
 import org.springframework.test.util.ReflectionTestUtils;
-import ch.tbmelabs.authorizationserver.web.utils.LoggingExceptionTranslator;
 
 public class LoggingExceptionTranslatorTest {
 

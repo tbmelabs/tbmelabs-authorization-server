@@ -5,6 +5,7 @@ import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.MockitoAnnotations.initMocks;
+
 import ch.tbmelabs.authorizationserver.domain.User;
 import ch.tbmelabs.authorizationserver.domain.dto.UserDTO;
 import ch.tbmelabs.authorizationserver.domain.dto.mapper.UserMapper;

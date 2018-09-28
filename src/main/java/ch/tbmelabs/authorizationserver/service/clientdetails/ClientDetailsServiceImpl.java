@@ -1,12 +1,12 @@
 package ch.tbmelabs.authorizationserver.service.clientdetails;
 
+import ch.tbmelabs.authorizationserver.domain.Client;
+import ch.tbmelabs.authorizationserver.domain.repository.ClientCRUDRepository;
 import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.oauth2.provider.ClientDetailsService;
 import org.springframework.stereotype.Service;
-import ch.tbmelabs.authorizationserver.domain.Client;
-import ch.tbmelabs.authorizationserver.domain.repository.ClientCRUDRepository;
 
 @Service
 public class ClientDetailsServiceImpl implements ClientDetailsService {

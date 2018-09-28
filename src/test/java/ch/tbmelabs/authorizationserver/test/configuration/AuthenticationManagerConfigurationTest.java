@@ -2,6 +2,10 @@ package ch.tbmelabs.authorizationserver.test.configuration;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.MockitoAnnotations.initMocks;
+
+import ch.tbmelabs.authorizationserver.configuration.AuthenticationManagerConfiguration;
+import ch.tbmelabs.authorizationserver.service.userdetails.PreAuthenticatedAuthenticationProviderImpl;
+import ch.tbmelabs.authorizationserver.service.userdetails.UserDetailsServiceImpl;
 import java.util.Optional;
 import org.junit.Before;
 import org.junit.Test;
@@ -15,9 +19,6 @@ import org.springframework.security.authentication.ProviderManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.ObjectPostProcessor;
 import org.springframework.test.util.ReflectionTestUtils;
-import ch.tbmelabs.authorizationserver.configuration.AuthenticationManagerConfiguration;
-import ch.tbmelabs.authorizationserver.service.userdetails.PreAuthenticatedAuthenticationProviderImpl;
-import ch.tbmelabs.authorizationserver.service.userdetails.UserDetailsServiceImpl;
 
 public class AuthenticationManagerConfigurationTest {
 

@@ -1,8 +1,8 @@
 package ch.tbmelabs.authorizationserver.domain.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import java.util.Date;
 import javax.persistence.MappedSuperclass;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

@@ -3,6 +3,9 @@ package ch.tbmelabs.authorizationserver.test.configuration;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.doCallRealMethod;
 import static org.mockito.MockitoAnnotations.initMocks;
+
+import ch.tbmelabs.authorizationserver.configuration.TokenServiceConfiguration;
+import ch.tbmelabs.authorizationserver.service.clientdetails.ClientDetailsServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
@@ -12,8 +15,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.oauth2.provider.token.TokenStore;
-import ch.tbmelabs.authorizationserver.configuration.TokenServiceConfiguration;
-import ch.tbmelabs.authorizationserver.service.clientdetails.ClientDetailsServiceImpl;
 
 public class TokenServiceConfigurationTest {
 

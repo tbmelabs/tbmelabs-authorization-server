@@ -1,11 +1,12 @@
 package ch.tbmelabs.authorizationserver.test.domain.repository;
 
 import static org.assertj.core.api.Assertions.assertThat;
+
+import ch.tbmelabs.authorizationserver.Application;
 import org.junit.Test;
 import org.reflections.Reflections;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import ch.tbmelabs.authorizationserver.Application;
 
 public class RepositoryAnnotationTest {
 

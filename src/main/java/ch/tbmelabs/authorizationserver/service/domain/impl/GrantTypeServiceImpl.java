@@ -1,9 +1,9 @@
 package ch.tbmelabs.authorizationserver.service.domain.impl;
 
-import org.springframework.stereotype.Service;
 import ch.tbmelabs.authorizationserver.domain.GrantType;
 import ch.tbmelabs.authorizationserver.domain.repository.GrantTypeCRUDRepository;
 import ch.tbmelabs.authorizationserver.service.domain.GrantTypeService;
+import org.springframework.stereotype.Service;
 
 @Service
 public class GrantTypeServiceImpl implements GrantTypeService {

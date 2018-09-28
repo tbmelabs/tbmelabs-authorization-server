@@ -5,14 +5,15 @@ import static org.springframework.security.test.web.servlet.request.SecurityMock
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import ch.tbmelabs.authorizationserver.domain.User;
+import ch.tbmelabs.authorizationserver.domain.repository.UserCRUDRepository;
+import ch.tbmelabs.authorizationserver.test.AbstractOAuth2AuthorizationServerContextAwareTest;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.test.web.servlet.MockMvc;
-import ch.tbmelabs.authorizationserver.domain.User;
-import ch.tbmelabs.authorizationserver.domain.repository.UserCRUDRepository;
-import ch.tbmelabs.authorizationserver.test.AbstractOAuth2AuthorizationServerContextAwareTest;
 
 public class SigninEndpointIntTest extends AbstractOAuth2AuthorizationServerContextAwareTest {
 
@@ -34,7 +35,7 @@ public class SigninEndpointIntTest extends AbstractOAuth2AuthorizationServerCont
   @Before
   public void beforeTestSetup() {
     final User testUser = User.builder().username(VALID_USERNAME).email(VALID_USERNAME + "@tbme.tv")
-        .password(VALID_PASSWORD).isBlocked(false).isEnabled(true).build();
+      .password(VALID_PASSWORD).isBlocked(false).isEnabled(true).build();
 
     userRepository.save(testUser);
   }
@@ -42,10 +43,10 @@ public class SigninEndpointIntTest extends AbstractOAuth2AuthorizationServerCont
   @Test
   public void loginProcessingWithInvalidUsernameShouldFail() throws Exception {
     String errorMessage = mockMvc
-        .perform(post(SIGNIN_PROCESSING_URL).with(csrf()).param(USERNAME_PARAMETER_NAME, "invalid")
-            .param(PASSWORD_PARAMETER_NAME, VALID_PASSWORD))
-        .andDo(print()).andExpect(status().is(HttpStatus.UNAUTHORIZED.value())).andReturn()
-        .getResponse().getErrorMessage();
+      .perform(post(SIGNIN_PROCESSING_URL).with(csrf()).param(USERNAME_PARAMETER_NAME, "invalid")
+        .param(PASSWORD_PARAMETER_NAME, VALID_PASSWORD))
+      .andDo(print()).andExpect(status().is(HttpStatus.UNAUTHORIZED.value())).andReturn()
+      .getResponse().getErrorMessage();
 
     assertThat(errorMessage).isEqualTo(UNAUTHORIZED_MESSAGE);
   }
@@ -53,11 +54,11 @@ public class SigninEndpointIntTest extends AbstractOAuth2AuthorizationServerCont
   @Test
   public void loginProcessingWithInvalidPasswordShoulFail() throws Exception {
     String errorMessage = mockMvc
-        .perform(
-            post(SIGNIN_PROCESSING_URL).with(csrf()).param(USERNAME_PARAMETER_NAME, VALID_USERNAME)
-                .param(PASSWORD_PARAMETER_NAME, "invalid"))
-        .andDo(print()).andExpect(status().is(HttpStatus.UNAUTHORIZED.value())).andReturn()
-        .getResponse().getErrorMessage();
+      .perform(
+        post(SIGNIN_PROCESSING_URL).with(csrf()).param(USERNAME_PARAMETER_NAME, VALID_USERNAME)
+          .param(PASSWORD_PARAMETER_NAME, "invalid"))
+      .andDo(print()).andExpect(status().is(HttpStatus.UNAUTHORIZED.value())).andReturn()
+      .getResponse().getErrorMessage();
 
     assertThat(errorMessage).isEqualTo(UNAUTHORIZED_MESSAGE);
   }
@@ -65,11 +66,11 @@ public class SigninEndpointIntTest extends AbstractOAuth2AuthorizationServerCont
   @Test
   public void loginProcessingWithValidCredentialsShouldSucceed() throws Exception {
     String redirectUrl = mockMvc
-        .perform(
-            post(SIGNIN_PROCESSING_URL).with(csrf()).param(USERNAME_PARAMETER_NAME, VALID_USERNAME)
-                .param(PASSWORD_PARAMETER_NAME, VALID_PASSWORD))
-        .andDo(print()).andExpect(status().is(HttpStatus.FOUND.value())).andReturn().getResponse()
-        .getRedirectedUrl();
+      .perform(
+        post(SIGNIN_PROCESSING_URL).with(csrf()).param(USERNAME_PARAMETER_NAME, VALID_USERNAME)
+          .param(PASSWORD_PARAMETER_NAME, VALID_PASSWORD))
+      .andDo(print()).andExpect(status().is(HttpStatus.FOUND.value())).andReturn().getResponse()
+      .getRedirectedUrl();
 
     assertThat(redirectUrl).isEqualTo("/");
   }
@@ -77,17 +78,16 @@ public class SigninEndpointIntTest extends AbstractOAuth2AuthorizationServerCont
   @Test
   public void loginProcessingShouldFailIfUserIsDisabled() throws Exception {
     final User disabledUser = User.builder().username("blocked_user").email("blocked_user@tbme.tv")
-        .password(VALID_PASSWORD).isBlocked(false).isEnabled(false).build();
+      .password(VALID_PASSWORD).isBlocked(false).isEnabled(false).build();
 
     userRepository.save(disabledUser);
 
-
     String errorMessage = mockMvc
-        .perform(post(SIGNIN_PROCESSING_URL).with(csrf())
-            .param(USERNAME_PARAMETER_NAME, disabledUser.getUsername())
-            .param(PASSWORD_PARAMETER_NAME, disabledUser.getPassword()))
-        .andDo(print()).andExpect(status().is(HttpStatus.UNAUTHORIZED.value())).andReturn()
-        .getResponse().getErrorMessage();
+      .perform(post(SIGNIN_PROCESSING_URL).with(csrf())
+        .param(USERNAME_PARAMETER_NAME, disabledUser.getUsername())
+        .param(PASSWORD_PARAMETER_NAME, disabledUser.getPassword()))
+      .andDo(print()).andExpect(status().is(HttpStatus.UNAUTHORIZED.value())).andReturn()
+      .getResponse().getErrorMessage();
 
     assertThat(errorMessage).isEqualTo(UNAUTHORIZED_MESSAGE);
   }
@@ -95,16 +95,16 @@ public class SigninEndpointIntTest extends AbstractOAuth2AuthorizationServerCont
   @Test
   public void loginProcessingShouldFailIfUserIsBlocked() throws Exception {
     final User blockedUser = User.builder().username("blocked_user").email("blocked_user@tbme.tv")
-        .password(VALID_PASSWORD).isBlocked(true).isEnabled(true).build();
+      .password(VALID_PASSWORD).isBlocked(true).isEnabled(true).build();
 
     userRepository.save(blockedUser);
 
     String errorMessage = mockMvc
-        .perform(post(SIGNIN_PROCESSING_URL).with(csrf())
-            .param(USERNAME_PARAMETER_NAME, blockedUser.getUsername())
-            .param(PASSWORD_PARAMETER_NAME, blockedUser.getPassword()))
-        .andDo(print()).andExpect(status().is(HttpStatus.UNAUTHORIZED.value())).andReturn()
-        .getResponse().getErrorMessage();
+      .perform(post(SIGNIN_PROCESSING_URL).with(csrf())
+        .param(USERNAME_PARAMETER_NAME, blockedUser.getUsername())
+        .param(PASSWORD_PARAMETER_NAME, blockedUser.getPassword()))
+      .andDo(print()).andExpect(status().is(HttpStatus.UNAUTHORIZED.value())).andReturn()
+      .getResponse().getErrorMessage();
 
     assertThat(errorMessage).isEqualTo(UNAUTHORIZED_MESSAGE);
   }

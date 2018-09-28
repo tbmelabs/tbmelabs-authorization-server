@@ -4,6 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.doCallRealMethod;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.MockitoAnnotations.initMocks;
+
 import ch.tbmelabs.authorizationserver.configuration.TokenStoreConfiguration;
 import ch.tbmelabs.authorizationserver.configuration.TokenStoreConfiguration.JdbcTokenStoreConfiguration;
 import ch.tbmelabs.authorizationserver.configuration.TokenStoreConfiguration.RedisTokenStoreConfiguration;

@@ -1,6 +1,8 @@
 package ch.tbmelabs.authorizationserver.test.web;
 
 import static org.assertj.core.api.Assertions.assertThat;
+
+import ch.tbmelabs.authorizationserver.Application;
 import java.util.HashSet;
 import java.util.Set;
 import org.junit.BeforeClass;
@@ -8,7 +10,6 @@ import org.junit.Test;
 import org.reflections.Reflections;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RestController;
-import ch.tbmelabs.authorizationserver.Application;
 
 public class ControllerAnnotationTest {
 

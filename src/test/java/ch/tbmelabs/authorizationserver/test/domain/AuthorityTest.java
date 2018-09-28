@@ -2,6 +2,10 @@ package ch.tbmelabs.authorizationserver.test.domain;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.MockitoAnnotations.initMocks;
+
+import ch.tbmelabs.authorizationserver.domain.AbstractAuditingEntity;
+import ch.tbmelabs.authorizationserver.domain.Authority;
+import ch.tbmelabs.authorizationserver.domain.association.clientauthority.ClientAuthorityAssociation;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Random;
@@ -14,9 +18,6 @@ import org.junit.Test;
 import org.mockito.Mockito;
 import org.mockito.Spy;
 import org.springframework.test.util.ReflectionTestUtils;
-import ch.tbmelabs.authorizationserver.domain.AbstractAuditingEntity;
-import ch.tbmelabs.authorizationserver.domain.Authority;
-import ch.tbmelabs.authorizationserver.domain.association.clientauthority.ClientAuthorityAssociation;
 
 public class AuthorityTest {
 

@@ -1,16 +1,16 @@
 package ch.tbmelabs.authorizationserver.service.signup.impl;
 
-import java.util.Optional;
-import java.util.UUID;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Service;
 import ch.tbmelabs.authorizationserver.domain.EmailConfirmationToken;
 import ch.tbmelabs.authorizationserver.domain.User;
 import ch.tbmelabs.authorizationserver.domain.repository.EmailConfirmationTokenCRUDRepository;
 import ch.tbmelabs.authorizationserver.domain.repository.UserCRUDRepository;
 import ch.tbmelabs.authorizationserver.exception.EmailConfirmationTokenNotFoundException;
 import ch.tbmelabs.authorizationserver.service.signup.EmailConfirmationTokenService;
+import java.util.Optional;
+import java.util.UUID;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
 @Service
 public class EmailConfirmationTokenServiceImpl implements EmailConfirmationTokenService {

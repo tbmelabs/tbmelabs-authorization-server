@@ -1,5 +1,8 @@
 package ch.tbmelabs.authorizationserver.configuration;
 
+import ch.tbmelabs.authorizationserver.service.clientdetails.ClientDetailsServiceImpl;
+import ch.tbmelabs.authorizationserver.service.userdetails.UserDetailsServiceImpl;
+import ch.tbmelabs.authorizationserver.web.utils.LoggingExceptionTranslator;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
@@ -9,9 +12,6 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
 import org.springframework.security.oauth2.provider.token.TokenStore;
-import ch.tbmelabs.authorizationserver.service.clientdetails.ClientDetailsServiceImpl;
-import ch.tbmelabs.authorizationserver.service.userdetails.UserDetailsServiceImpl;
-import ch.tbmelabs.authorizationserver.web.utils.LoggingExceptionTranslator;
 
 @Configuration
 @EnableAuthorizationServer

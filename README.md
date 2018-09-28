@@ -22,6 +22,11 @@ Make sure to install the following software before starting:
 Before executing the application you must prepare the database. There are several scripts located in src/main/resources/db/scripts. For instance `test_database.sql` is required to setup the integration test database.
 If you do not have a local redis cluster you might want to use a PostgreSQL token store. To prepare the database use the script `jdbc_token_store.sql`.
 
+#### Yarn + Frontend
+
+We use Yarn for all frontend belongings.
+You must install the frontend at least once before starting up the server. Otherwise it wont find the files required to server-side-render Angular. To do so either navigate into src/main/webapp and run `yarn install && yarn build:dev` or run `mvn clean package -Pwebpack` in the root directory.
+
 ## Running the tests
 
 ### Frontend
@@ -61,7 +66,7 @@ See also the list of [contributors](https://github.com/tbmelabs/tbme-tv/contribu
 
 ## Hat Tips
 
-* To [swaechter](https://github.com/swaechter) for the Angular-Server-Side-Rendering in `AngularUniversalRenderEngine.java`. Original code is in [this repository](https://github.com/swaechter/angularj-universal).
+* To [swaechter](https://github.com/swaechter) for the basic idea on server-side-rendering Angular in `AngularUniversalRenderEngine.java`. Original code is in [this repository](https://github.com/swaechter/angularj-universal).
 
 ## License
 

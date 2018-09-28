@@ -3,6 +3,15 @@ package ch.tbmelabs.authorizationserver.test.domain;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.MockitoAnnotations.initMocks;
+
+import ch.tbmelabs.authorizationserver.domain.AbstractAuditingEntity;
+import ch.tbmelabs.authorizationserver.domain.Authority;
+import ch.tbmelabs.authorizationserver.domain.Client;
+import ch.tbmelabs.authorizationserver.domain.GrantType;
+import ch.tbmelabs.authorizationserver.domain.Scope;
+import ch.tbmelabs.authorizationserver.domain.association.clientauthority.ClientAuthorityAssociation;
+import ch.tbmelabs.authorizationserver.domain.association.clientgranttype.ClientGrantTypeAssociation;
+import ch.tbmelabs.authorizationserver.domain.association.clientscope.ClientScopeAssociation;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Random;
@@ -15,14 +24,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 import org.mockito.Spy;
-import ch.tbmelabs.authorizationserver.domain.AbstractAuditingEntity;
-import ch.tbmelabs.authorizationserver.domain.Authority;
-import ch.tbmelabs.authorizationserver.domain.Client;
-import ch.tbmelabs.authorizationserver.domain.GrantType;
-import ch.tbmelabs.authorizationserver.domain.Scope;
-import ch.tbmelabs.authorizationserver.domain.association.clientauthority.ClientAuthorityAssociation;
-import ch.tbmelabs.authorizationserver.domain.association.clientgranttype.ClientGrantTypeAssociation;
-import ch.tbmelabs.authorizationserver.domain.association.clientscope.ClientScopeAssociation;
 
 public class ClientTest {
 

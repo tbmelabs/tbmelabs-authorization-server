@@ -18,6 +18,10 @@ import org.springframework.core.io.ResourceLoader;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Component;
 
+/**
+ * Hat tip to swaechter - https://github.com/swaechter. He gave the basic idea on
+ * server-side-rendering Angular in https://github.com/swaechter/angularj-universal.
+ */
 @Component
 public class AngularUniversalRenderEngine {
 

@@ -1,13 +1,13 @@
 package ch.tbmelabs.authorizationserver.configuration;
 
+import ch.tbmelabs.authorizationserver.domain.User;
+import ch.tbmelabs.authorizationserver.service.userdetails.PreAuthenticatedAuthenticationProviderImpl;
+import ch.tbmelabs.authorizationserver.service.userdetails.UserDetailsServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.ObjectPostProcessor;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
-import ch.tbmelabs.authorizationserver.domain.User;
-import ch.tbmelabs.authorizationserver.service.userdetails.PreAuthenticatedAuthenticationProviderImpl;
-import ch.tbmelabs.authorizationserver.service.userdetails.UserDetailsServiceImpl;
 
 @Configuration
 public class AuthenticationManagerConfiguration {

@@ -4,6 +4,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.MockitoAnnotations.initMocks;
+
+import ch.tbmelabs.authorizationserver.configuration.OAuth2AuthorizationServerConfiguration;
+import ch.tbmelabs.authorizationserver.service.clientdetails.ClientDetailsServiceImpl;
+import ch.tbmelabs.authorizationserver.service.userdetails.UserDetailsServiceImpl;
+import ch.tbmelabs.authorizationserver.web.utils.LoggingExceptionTranslator;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
@@ -18,10 +23,6 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
 import org.springframework.security.oauth2.provider.token.TokenStore;
-import ch.tbmelabs.authorizationserver.configuration.OAuth2AuthorizationServerConfiguration;
-import ch.tbmelabs.authorizationserver.service.clientdetails.ClientDetailsServiceImpl;
-import ch.tbmelabs.authorizationserver.service.userdetails.UserDetailsServiceImpl;
-import ch.tbmelabs.authorizationserver.web.utils.LoggingExceptionTranslator;
 
 public class OAuth2AuthorizationServerConfigurationTest {
 

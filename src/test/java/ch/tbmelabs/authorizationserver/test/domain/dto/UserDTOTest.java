@@ -1,10 +1,11 @@
 package ch.tbmelabs.authorizationserver.test.domain.dto;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import org.apache.commons.lang3.RandomStringUtils;
-import org.junit.Test;
+
 import ch.tbmelabs.authorizationserver.domain.User;
 import ch.tbmelabs.authorizationserver.domain.dto.UserDTO;
+import org.apache.commons.lang3.RandomStringUtils;
+import org.junit.Test;
 
 public class UserDTOTest {
 

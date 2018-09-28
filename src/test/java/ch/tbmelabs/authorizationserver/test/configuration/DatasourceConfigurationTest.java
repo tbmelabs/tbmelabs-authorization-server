@@ -1,6 +1,7 @@
 package ch.tbmelabs.authorizationserver.test.configuration;
 
 import static org.assertj.core.api.Assertions.assertThat;
+
 import ch.tbmelabs.authorizationserver.configuration.DatasourceConfiguration;
 import ch.tbmelabs.serverconstants.spring.SpringApplicationProfileEnum;
 import com.zaxxer.hikari.HikariDataSource;

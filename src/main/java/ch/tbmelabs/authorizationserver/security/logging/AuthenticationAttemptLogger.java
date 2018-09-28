@@ -1,12 +1,12 @@
 package ch.tbmelabs.authorizationserver.security.logging;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
 import ch.tbmelabs.authorizationserver.domain.AuthenticationLog;
 import ch.tbmelabs.authorizationserver.domain.AuthenticationLog.AUTHENTICATION_STATE;
 import ch.tbmelabs.authorizationserver.domain.repository.AuthenticationLogCRUDRepository;
 import ch.tbmelabs.authorizationserver.domain.repository.UserCRUDRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 @Component
 public class AuthenticationAttemptLogger {

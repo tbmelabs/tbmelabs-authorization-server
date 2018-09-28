@@ -4,6 +4,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.doCallRealMethod;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.MockitoAnnotations.initMocks;
+
+import ch.tbmelabs.authorizationserver.domain.AbstractAuditingEntity;
+import ch.tbmelabs.authorizationserver.domain.EmailConfirmationToken;
+import ch.tbmelabs.authorizationserver.domain.Role;
+import ch.tbmelabs.authorizationserver.domain.User;
+import ch.tbmelabs.authorizationserver.domain.association.userrole.UserRoleAssociation;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Random;
@@ -18,11 +24,6 @@ import org.mockito.Mockito;
 import org.mockito.Spy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.test.util.ReflectionTestUtils;
-import ch.tbmelabs.authorizationserver.domain.AbstractAuditingEntity;
-import ch.tbmelabs.authorizationserver.domain.EmailConfirmationToken;
-import ch.tbmelabs.authorizationserver.domain.Role;
-import ch.tbmelabs.authorizationserver.domain.User;
-import ch.tbmelabs.authorizationserver.domain.association.userrole.UserRoleAssociation;
 
 public class UserTest {
 

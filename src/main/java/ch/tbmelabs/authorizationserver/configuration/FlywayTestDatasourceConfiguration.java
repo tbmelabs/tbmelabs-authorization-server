@@ -1,11 +1,11 @@
 package ch.tbmelabs.authorizationserver.configuration;
 
+import ch.tbmelabs.serverconstants.spring.SpringApplicationProfileConstants;
+import com.zaxxer.hikari.HikariDataSource;
 import org.flywaydb.core.Flyway;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
-import com.zaxxer.hikari.HikariDataSource;
-import ch.tbmelabs.serverconstants.spring.SpringApplicationProfileConstants;
 
 @Configuration
 @Profile({SpringApplicationProfileConstants.TEST})

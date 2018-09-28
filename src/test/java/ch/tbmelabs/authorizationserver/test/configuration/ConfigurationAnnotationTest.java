@@ -1,10 +1,11 @@
 package ch.tbmelabs.authorizationserver.test.configuration;
 
 import static org.assertj.core.api.Assertions.assertThat;
+
+import ch.tbmelabs.authorizationserver.Application;
 import org.junit.Test;
 import org.reflections.Reflections;
 import org.springframework.context.annotation.Configuration;
-import ch.tbmelabs.authorizationserver.Application;
 
 public class ConfigurationAnnotationTest {
 

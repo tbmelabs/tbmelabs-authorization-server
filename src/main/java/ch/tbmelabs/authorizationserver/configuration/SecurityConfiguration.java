@@ -1,5 +1,8 @@
 package ch.tbmelabs.authorizationserver.configuration;
 
+import ch.tbmelabs.authorizationserver.security.filter.OAuth2BearerTokenAuthenticationFilter;
+import ch.tbmelabs.authorizationserver.security.logging.AuthenticationFailureHandler;
+import ch.tbmelabs.authorizationserver.security.logging.AuthenticationSuccessHandler;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -8,9 +11,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-import ch.tbmelabs.authorizationserver.security.filter.OAuth2BearerTokenAuthenticationFilter;
-import ch.tbmelabs.authorizationserver.security.logging.AuthenticationFailureHandler;
-import ch.tbmelabs.authorizationserver.security.logging.AuthenticationSuccessHandler;
 
 @Configuration
 @EnableWebSecurity
@@ -46,25 +46,25 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     http
 
       .authorizeRequests()
-        .antMatchers("/favicon.ico").permitAll()
-        .antMatchers("/me","/user").permitAll()
-        .antMatchers("/signup/**").permitAll()
-        .antMatchers("/public/**").permitAll()
+      .antMatchers("/favicon.ico").permitAll()
+      .antMatchers("/me", "/user").permitAll()
+      .antMatchers("/signup/**").permitAll()
+      .antMatchers("/public/**").permitAll()
       .anyRequest().authenticated()
 
       .and().formLogin()
-        .loginPage("/signin")
-        .loginProcessingUrl("/signin")
-        .failureUrl("/signin?error")
-        .failureHandler(authenticationFailureHandler)
-        .successHandler(authenticationSuccessHandler)
+      .loginPage("/signin")
+      .loginProcessingUrl("/signin")
+      .failureUrl("/signin?error")
+      .failureHandler(authenticationFailureHandler)
+      .successHandler(authenticationSuccessHandler)
       .and().httpBasic()
 
       .and().logout()
-        .logoutRequestMatcher(new AntPathRequestMatcher("/logout")).permitAll()
+      .logoutRequestMatcher(new AntPathRequestMatcher("/logout")).permitAll()
 
       .and()
-        .addFilterBefore(oAuth2AuthenticationFilter, BasicAuthenticationFilter.class);
+      .addFilterBefore(oAuth2AuthenticationFilter, BasicAuthenticationFilter.class);
     // @formatter:on
   }
 }

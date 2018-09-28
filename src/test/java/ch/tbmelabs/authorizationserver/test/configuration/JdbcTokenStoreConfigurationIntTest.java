@@ -1,6 +1,7 @@
 package ch.tbmelabs.authorizationserver.test.configuration;
 
 import static org.assertj.core.api.Assertions.assertThat;
+
 import ch.tbmelabs.authorizationserver.configuration.TokenStoreConfiguration.JdbcTokenStoreConfiguration;
 import ch.tbmelabs.authorizationserver.test.AbstractOAuth2AuthorizationServerContextAwareTest;
 import ch.tbmelabs.serverconstants.spring.SpringApplicationProfileConstants;

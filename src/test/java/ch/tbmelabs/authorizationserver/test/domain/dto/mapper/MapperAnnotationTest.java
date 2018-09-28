@@ -1,10 +1,11 @@
 package ch.tbmelabs.authorizationserver.test.domain.dto.mapper;
 
 import static org.assertj.core.api.Assertions.assertThat;
+
+import ch.tbmelabs.authorizationserver.Application;
 import org.junit.Test;
 import org.mapstruct.Mapper;
 import org.reflections.Reflections;
-import ch.tbmelabs.authorizationserver.Application;
 
 public class MapperAnnotationTest {
 

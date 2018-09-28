@@ -1,13 +1,5 @@
 package ch.tbmelabs.authorizationserver.domain.dto.mapper;
 
-import java.util.Arrays;
-import java.util.Set;
-import java.util.stream.Collectors;
-import org.apache.logging.log4j.util.Strings;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.MappingTarget;
-import org.mapstruct.factory.Mappers;
 import ch.tbmelabs.authorizationserver.ApplicationContextHolder;
 import ch.tbmelabs.authorizationserver.domain.Client;
 import ch.tbmelabs.authorizationserver.domain.association.clientauthority.ClientAuthorityAssociation;
@@ -20,6 +12,14 @@ import ch.tbmelabs.authorizationserver.domain.dto.ScopeDTO;
 import ch.tbmelabs.authorizationserver.service.domain.AuthorityService;
 import ch.tbmelabs.authorizationserver.service.domain.GrantTypeService;
 import ch.tbmelabs.authorizationserver.service.domain.ScopeService;
+import java.util.Arrays;
+import java.util.Set;
+import java.util.stream.Collectors;
+import org.apache.logging.log4j.util.Strings;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.MappingTarget;
+import org.mapstruct.factory.Mappers;
 
 @Mapper(componentModel = "spring", uses = {GrantTypeMapper.class, GrantTypeService.class,
   AuthorityMapper.class, AuthorityService.class, ScopeMapper.class, ScopeService.class})
@@ -37,14 +37,14 @@ public interface ClientMapper extends EntityMapper<Client, ClientDTO> {
   @Override
   @Mapping(source = "redirectUris", target = "redirectUri")
   @Mapping(target = "grantTypes", expression = "java("
-      + "  grantTypesToGrantTypeAssociations(dto.getGrantTypes(), client)"
-      + ")")
+    + "  grantTypesToGrantTypeAssociations(dto.getGrantTypes(), client)"
+    + ")")
   @Mapping(target = "authorities", expression = "java("
-      + "  authoritiesToAuthorityAssociations(dto.getAuthorities(), client)"
-      + ")")
+    + "  authoritiesToAuthorityAssociations(dto.getAuthorities(), client)"
+    + ")")
   @Mapping(target = "scopes", expression = "java("
-      + "  scopesToScopeAssociations(dto.getScopes(), client)"
-      + ")")
+    + "  scopesToScopeAssociations(dto.getScopes(), client)"
+    + ")")
   // @formatter:on
   Client toEntity(ClientDTO dto);
 
@@ -52,14 +52,14 @@ public interface ClientMapper extends EntityMapper<Client, ClientDTO> {
   @Mapping(target = "id", ignore = true)
   @Mapping(target = "redirectUri", source = "redirectUris")
   @Mapping(target = "grantTypes", expression = "java("
-      + "  grantTypesToGrantTypeAssociations(updated.getGrantTypes(), existing)"
-      + ")")
+    + "  grantTypesToGrantTypeAssociations(updated.getGrantTypes(), existing)"
+    + ")")
   @Mapping(target = "authorities", expression = "java("
-      + "  authoritiesToAuthorityAssociations(updated.getAuthorities(), existing)"
-      + ")")
+    + "  authoritiesToAuthorityAssociations(updated.getAuthorities(), existing)"
+    + ")")
   @Mapping(target = "scopes", expression = "java("
-      + "  scopesToScopeAssociations(updated.getScopes(), existing)"
-      + ")")
+    + "  scopesToScopeAssociations(updated.getScopes(), existing)"
+    + ")")
   // @formatter:on
   Client updateClientFromClientDto(ClientDTO updated, @MappingTarget Client existing);
 

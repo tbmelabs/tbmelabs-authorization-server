@@ -1,10 +1,10 @@
 package ch.tbmelabs.authorizationserver.domain;
 
+import ch.tbmelabs.authorizationserver.domain.association.clientauthority.ClientAuthorityAssociation;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
-import ch.tbmelabs.authorizationserver.domain.association.clientauthority.ClientAuthorityAssociation;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;

@@ -4,6 +4,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.MockitoAnnotations.initMocks;
+
+import ch.tbmelabs.authorizationserver.domain.AuthenticationLog.AUTHENTICATION_STATE;
+import ch.tbmelabs.authorizationserver.security.logging.AuthenticationAttemptLogger;
+import ch.tbmelabs.authorizationserver.security.logging.AuthenticationFailureHandler;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import org.junit.Before;
@@ -17,9 +21,6 @@ import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;
 import org.springframework.stereotype.Component;
-import ch.tbmelabs.authorizationserver.domain.AuthenticationLog.AUTHENTICATION_STATE;
-import ch.tbmelabs.authorizationserver.security.logging.AuthenticationAttemptLogger;
-import ch.tbmelabs.authorizationserver.security.logging.AuthenticationFailureHandler;
 
 public class AuthenticationFailureHandlerTest {
 

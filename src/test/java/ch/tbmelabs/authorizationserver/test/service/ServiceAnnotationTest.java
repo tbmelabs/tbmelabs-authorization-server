@@ -1,10 +1,11 @@
 package ch.tbmelabs.authorizationserver.test.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
+
+import ch.tbmelabs.authorizationserver.Application;
 import org.junit.Test;
 import org.reflections.Reflections;
 import org.springframework.stereotype.Service;
-import ch.tbmelabs.authorizationserver.Application;
 
 public class ServiceAnnotationTest {
 

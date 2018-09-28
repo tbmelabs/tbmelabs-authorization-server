@@ -1,6 +1,10 @@
 package ch.tbmelabs.authorizationserver.test.configuration;
 
 import static org.assertj.core.api.Assertions.assertThat;
+
+import ch.tbmelabs.authorizationserver.Application;
+import ch.tbmelabs.authorizationserver.configuration.TokenStoreConfiguration.RedisTokenStoreConfiguration;
+import ch.tbmelabs.serverconstants.spring.SpringApplicationProfileConstants;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,9 +14,6 @@ import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import ch.tbmelabs.authorizationserver.Application;
-import ch.tbmelabs.authorizationserver.configuration.TokenStoreConfiguration.RedisTokenStoreConfiguration;
-import ch.tbmelabs.serverconstants.spring.SpringApplicationProfileConstants;
 
 @ContextConfiguration
 @RunWith(SpringJUnit4ClassRunner.class)

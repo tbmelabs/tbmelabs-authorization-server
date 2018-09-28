@@ -1,10 +1,10 @@
 package ch.tbmelabs.authorizationserver.service.domain;
 
+import ch.tbmelabs.authorizationserver.domain.Client;
+import ch.tbmelabs.authorizationserver.domain.dto.ClientDTO;
 import java.util.Optional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import ch.tbmelabs.authorizationserver.domain.Client;
-import ch.tbmelabs.authorizationserver.domain.dto.ClientDTO;
 
 public interface ClientService {
 

@@ -4,6 +4,7 @@ import static org.springframework.security.test.web.servlet.request.SecurityMock
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
 import ch.tbmelabs.authorizationserver.domain.User;
 import ch.tbmelabs.authorizationserver.domain.repository.AuthenticationLogCRUDRepository;
 import ch.tbmelabs.authorizationserver.domain.repository.UserCRUDRepository;

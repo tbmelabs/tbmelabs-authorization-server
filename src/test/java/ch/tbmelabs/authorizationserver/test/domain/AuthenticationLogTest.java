@@ -2,6 +2,11 @@ package ch.tbmelabs.authorizationserver.test.domain;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.MockitoAnnotations.initMocks;
+
+import ch.tbmelabs.authorizationserver.domain.AbstractAuditingEntity;
+import ch.tbmelabs.authorizationserver.domain.AuthenticationLog;
+import ch.tbmelabs.authorizationserver.domain.AuthenticationLog.AUTHENTICATION_STATE;
+import ch.tbmelabs.authorizationserver.domain.User;
 import java.util.Random;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -10,10 +15,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.Spy;
-import ch.tbmelabs.authorizationserver.domain.AbstractAuditingEntity;
-import ch.tbmelabs.authorizationserver.domain.AuthenticationLog;
-import ch.tbmelabs.authorizationserver.domain.User;
-import ch.tbmelabs.authorizationserver.domain.AuthenticationLog.AUTHENTICATION_STATE;
 
 public class AuthenticationLogTest {
 

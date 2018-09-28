@@ -1,5 +1,7 @@
 package ch.tbmelabs.authorizationserver.service.clientdetails;
 
+import ch.tbmelabs.authorizationserver.domain.Client;
+import ch.tbmelabs.authorizationserver.domain.association.clientauthority.ClientAuthorityAssociation;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
@@ -9,8 +11,6 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.oauth2.provider.ClientDetails;
-import ch.tbmelabs.authorizationserver.domain.Client;
-import ch.tbmelabs.authorizationserver.domain.association.clientauthority.ClientAuthorityAssociation;
 
 public class ClientDetailsImpl implements ClientDetails {
 

@@ -4,6 +4,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.MockitoAnnotations.initMocks;
+
+import ch.tbmelabs.authorizationserver.domain.EmailConfirmationToken;
+import ch.tbmelabs.authorizationserver.domain.User;
+import ch.tbmelabs.authorizationserver.domain.repository.EmailConfirmationTokenCRUDRepository;
+import ch.tbmelabs.authorizationserver.service.signup.impl.EmailConfirmationTokenServiceImpl;
 import java.util.Optional;
 import java.util.Random;
 import java.util.UUID;
@@ -16,10 +21,6 @@ import org.mockito.Mockito;
 import org.mockito.Spy;
 import org.mockito.stubbing.Answer;
 import org.springframework.stereotype.Service;
-import ch.tbmelabs.authorizationserver.domain.EmailConfirmationToken;
-import ch.tbmelabs.authorizationserver.domain.User;
-import ch.tbmelabs.authorizationserver.domain.repository.EmailConfirmationTokenCRUDRepository;
-import ch.tbmelabs.authorizationserver.service.signup.impl.EmailConfirmationTokenServiceImpl;
 
 public class EmailConfirmationTokenServiceTest {
 

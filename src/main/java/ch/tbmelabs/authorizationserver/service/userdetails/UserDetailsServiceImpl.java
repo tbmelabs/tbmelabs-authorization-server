@@ -1,13 +1,13 @@
 package ch.tbmelabs.authorizationserver.service.userdetails;
 
+import ch.tbmelabs.authorizationserver.domain.User;
+import ch.tbmelabs.authorizationserver.domain.repository.UserCRUDRepository;
 import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import ch.tbmelabs.authorizationserver.domain.User;
-import ch.tbmelabs.authorizationserver.domain.repository.UserCRUDRepository;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {

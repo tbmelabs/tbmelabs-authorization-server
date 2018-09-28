@@ -1,9 +1,9 @@
 package ch.tbmelabs.authorizationserver.service.domain.impl;
 
-import org.springframework.stereotype.Service;
 import ch.tbmelabs.authorizationserver.domain.Role;
 import ch.tbmelabs.authorizationserver.domain.repository.RoleCRUDRepository;
 import ch.tbmelabs.authorizationserver.service.domain.RoleService;
+import org.springframework.stereotype.Service;
 
 @Service
 public class RoleServiceImpl implements RoleService {

@@ -3,6 +3,7 @@ package ch.tbmelabs.authorizationserver.test.application;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.MockitoAnnotations.initMocks;
+
 import ch.tbmelabs.authorizationserver.Application;
 import ch.tbmelabs.serverconstants.spring.SpringApplicationProfileEnum;
 import org.junit.Before;

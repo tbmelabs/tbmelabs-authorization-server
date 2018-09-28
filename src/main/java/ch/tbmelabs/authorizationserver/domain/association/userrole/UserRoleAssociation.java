@@ -1,9 +1,9 @@
 package ch.tbmelabs.authorizationserver.domain.association.userrole;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import ch.tbmelabs.authorizationserver.domain.AbstractAuditingEntity;
 import ch.tbmelabs.authorizationserver.domain.Role;
 import ch.tbmelabs.authorizationserver.domain.User;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import java.util.Objects;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;

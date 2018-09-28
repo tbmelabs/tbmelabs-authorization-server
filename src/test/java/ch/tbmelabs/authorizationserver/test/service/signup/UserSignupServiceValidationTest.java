@@ -4,6 +4,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.doCallRealMethod;
 import static org.mockito.MockitoAnnotations.initMocks;
+
+import ch.tbmelabs.authorizationserver.domain.dto.UserDTO;
+import ch.tbmelabs.authorizationserver.domain.repository.RoleCRUDRepository;
+import ch.tbmelabs.authorizationserver.domain.repository.UserCRUDRepository;
+import ch.tbmelabs.authorizationserver.service.signup.impl.UserSignupServiceImpl;
 import java.util.Optional;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Before;
@@ -13,10 +18,6 @@ import org.mockito.ArgumentMatchers;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Spy;
-import ch.tbmelabs.authorizationserver.domain.dto.UserDTO;
-import ch.tbmelabs.authorizationserver.domain.repository.RoleCRUDRepository;
-import ch.tbmelabs.authorizationserver.domain.repository.UserCRUDRepository;
-import ch.tbmelabs.authorizationserver.service.signup.impl.UserSignupServiceImpl;
 
 public class UserSignupServiceValidationTest {
 

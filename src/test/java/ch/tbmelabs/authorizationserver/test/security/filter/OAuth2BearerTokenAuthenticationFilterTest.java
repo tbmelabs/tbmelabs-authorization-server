@@ -2,6 +2,8 @@ package ch.tbmelabs.authorizationserver.test.security.filter;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.MockitoAnnotations.initMocks;
+
+import ch.tbmelabs.authorizationserver.security.filter.OAuth2BearerTokenAuthenticationFilter;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
@@ -13,7 +15,6 @@ import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.stereotype.Component;
 import org.springframework.test.util.ReflectionTestUtils;
 import org.springframework.web.filter.GenericFilterBean;
-import ch.tbmelabs.authorizationserver.security.filter.OAuth2BearerTokenAuthenticationFilter;
 
 public class OAuth2BearerTokenAuthenticationFilterTest {
 

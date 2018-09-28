@@ -1,12 +1,12 @@
 package ch.tbmelabs.authorizationserver.web.signup;
 
+import ch.tbmelabs.authorizationserver.domain.dto.UserDTO;
+import ch.tbmelabs.authorizationserver.service.signup.UserSignupService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ch.tbmelabs.authorizationserver.domain.dto.UserDTO;
-import ch.tbmelabs.authorizationserver.service.signup.UserSignupService;
 
 @RestController
 @RequestMapping("/signup")

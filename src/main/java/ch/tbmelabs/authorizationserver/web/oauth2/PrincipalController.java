@@ -1,15 +1,15 @@
 package ch.tbmelabs.authorizationserver.web.oauth2;
 
+import ch.tbmelabs.authorizationserver.domain.User;
+import ch.tbmelabs.authorizationserver.domain.dto.UserDTO;
+import ch.tbmelabs.authorizationserver.domain.dto.mapper.UserMapper;
+import ch.tbmelabs.authorizationserver.domain.repository.UserCRUDRepository;
 import java.util.HashMap;
 import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ch.tbmelabs.authorizationserver.domain.User;
-import ch.tbmelabs.authorizationserver.domain.dto.UserDTO;
-import ch.tbmelabs.authorizationserver.domain.dto.mapper.UserMapper;
-import ch.tbmelabs.authorizationserver.domain.repository.UserCRUDRepository;
 
 @RestController
 public class PrincipalController {

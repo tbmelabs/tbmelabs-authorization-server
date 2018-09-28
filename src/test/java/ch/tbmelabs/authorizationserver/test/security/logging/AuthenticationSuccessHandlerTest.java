@@ -4,6 +4,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.MockitoAnnotations.initMocks;
+
+import ch.tbmelabs.authorizationserver.domain.AuthenticationLog.AUTHENTICATION_STATE;
+import ch.tbmelabs.authorizationserver.domain.User;
+import ch.tbmelabs.authorizationserver.security.logging.AuthenticationAttemptLogger;
+import ch.tbmelabs.authorizationserver.security.logging.AuthenticationSuccessHandler;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import org.apache.http.auth.UsernamePasswordCredentials;
@@ -18,10 +23,6 @@ import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
-import ch.tbmelabs.authorizationserver.domain.User;
-import ch.tbmelabs.authorizationserver.domain.AuthenticationLog.AUTHENTICATION_STATE;
-import ch.tbmelabs.authorizationserver.security.logging.AuthenticationAttemptLogger;
-import ch.tbmelabs.authorizationserver.security.logging.AuthenticationSuccessHandler;
 
 public class AuthenticationSuccessHandlerTest {
 

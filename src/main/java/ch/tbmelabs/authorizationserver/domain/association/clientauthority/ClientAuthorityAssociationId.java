@@ -1,8 +1,8 @@
 package ch.tbmelabs.authorizationserver.domain.association.clientauthority;
 
-import java.io.Serializable;
 import ch.tbmelabs.authorizationserver.domain.Authority;
 import ch.tbmelabs.authorizationserver.domain.Client;
+import java.io.Serializable;
 import lombok.Data;
 
 @Data

@@ -3,6 +3,10 @@ package ch.tbmelabs.authorizationserver.test.service.clientdetails;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.MockitoAnnotations.initMocks;
+
+import ch.tbmelabs.authorizationserver.domain.Client;
+import ch.tbmelabs.authorizationserver.domain.association.clientauthority.ClientAuthorityAssociation;
+import ch.tbmelabs.authorizationserver.service.clientdetails.ClientDetailsImpl;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -12,9 +16,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.springframework.security.oauth2.provider.ClientDetails;
-import ch.tbmelabs.authorizationserver.domain.Client;
-import ch.tbmelabs.authorizationserver.domain.association.clientauthority.ClientAuthorityAssociation;
-import ch.tbmelabs.authorizationserver.service.clientdetails.ClientDetailsImpl;
 
 public class ClientDetailsImplTest {
 

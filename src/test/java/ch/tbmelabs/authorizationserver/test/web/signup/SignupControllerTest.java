@@ -5,6 +5,10 @@ import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.MockitoAnnotations.initMocks;
+
+import ch.tbmelabs.authorizationserver.domain.dto.UserDTO;
+import ch.tbmelabs.authorizationserver.service.signup.UserSignupService;
+import ch.tbmelabs.authorizationserver.web.signup.SignupController;
 import java.lang.reflect.Method;
 import org.junit.Before;
 import org.junit.Test;
@@ -15,9 +19,6 @@ import org.mockito.Spy;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ch.tbmelabs.authorizationserver.domain.dto.UserDTO;
-import ch.tbmelabs.authorizationserver.service.signup.UserSignupService;
-import ch.tbmelabs.authorizationserver.web.signup.SignupController;
 
 public class SignupControllerTest {
 

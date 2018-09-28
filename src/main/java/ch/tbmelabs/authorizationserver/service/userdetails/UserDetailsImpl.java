@@ -1,11 +1,11 @@
 package ch.tbmelabs.authorizationserver.service.userdetails;
 
+import ch.tbmelabs.authorizationserver.domain.User;
+import ch.tbmelabs.authorizationserver.domain.association.userrole.UserRoleAssociation;
 import java.util.Collection;
 import java.util.stream.Collectors;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import ch.tbmelabs.authorizationserver.domain.User;
-import ch.tbmelabs.authorizationserver.domain.association.userrole.UserRoleAssociation;
 
 public class UserDetailsImpl implements UserDetails {
 

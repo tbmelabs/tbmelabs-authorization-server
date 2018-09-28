@@ -3,14 +3,15 @@ package ch.tbmelabs.authorizationserver.test.service.userdetails;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.MockitoAnnotations.initMocks;
+
+import ch.tbmelabs.authorizationserver.domain.User;
+import ch.tbmelabs.authorizationserver.service.userdetails.UserDetailsImpl;
 import java.util.ArrayList;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.springframework.security.core.userdetails.UserDetails;
-import ch.tbmelabs.authorizationserver.domain.User;
-import ch.tbmelabs.authorizationserver.service.userdetails.UserDetailsImpl;
 
 public class UserDetailsImplTest {
 

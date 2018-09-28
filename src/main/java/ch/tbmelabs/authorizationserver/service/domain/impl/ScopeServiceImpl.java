@@ -1,9 +1,9 @@
 package ch.tbmelabs.authorizationserver.service.domain.impl;
 
-import org.springframework.stereotype.Service;
 import ch.tbmelabs.authorizationserver.domain.Scope;
 import ch.tbmelabs.authorizationserver.domain.repository.ScopeCRUDRepository;
 import ch.tbmelabs.authorizationserver.service.domain.ScopeService;
+import org.springframework.stereotype.Service;
 
 @Service
 public class ScopeServiceImpl implements ScopeService {

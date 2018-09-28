@@ -1,11 +1,12 @@
 package ch.tbmelabs.authorizationserver.test.domain;
 
 import static org.assertj.core.api.Assertions.assertThat;
+
+import ch.tbmelabs.authorizationserver.Application;
+import ch.tbmelabs.authorizationserver.domain.AbstractAuditingEntity;
 import javax.persistence.Entity;
 import org.junit.Test;
 import org.reflections.Reflections;
-import ch.tbmelabs.authorizationserver.Application;
-import ch.tbmelabs.authorizationserver.domain.AbstractAuditingEntity;
 
 public class EntityAnnotationTest {
 

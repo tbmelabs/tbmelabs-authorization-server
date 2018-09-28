@@ -1,15 +1,15 @@
 package ch.tbmelabs.authorizationserver.service.domain.impl;
 
-import java.util.Optional;
-import javax.transaction.Transactional;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.stereotype.Service;
 import ch.tbmelabs.authorizationserver.domain.Client;
 import ch.tbmelabs.authorizationserver.domain.dto.ClientDTO;
 import ch.tbmelabs.authorizationserver.domain.dto.mapper.ClientMapper;
 import ch.tbmelabs.authorizationserver.domain.repository.ClientCRUDRepository;
 import ch.tbmelabs.authorizationserver.service.domain.ClientService;
+import java.util.Optional;
+import javax.transaction.Transactional;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
 
 @Service
 public class ClientServiceImpl implements ClientService {
