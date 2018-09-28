@@ -3,8 +3,8 @@
  OAuth2 authorization server allowing users to authenticate across multiple applications.
 
 [![Build Status](https://travis-ci.org/tbmelabs/tbmelabs-authorization-server.svg?branch=master)](https://travis-ci.org/tbmelabs/tbmelabs-authorization-server)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d9eae98d8d1d4915b8f56ab8e7ce8d7b)](https://www.codacy.com/app/bbortt_2/tbmelabs-authorization-server?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=tbmelabs/tbmelabs-authorization-server&amp;utm_campaign=Badge_Grade)
-[![Quality Gate](https://sonarcloud.io/api/badges/gate?key=https://sonarcloud.io/api/badges/gate?key=ch.tbmelabs:tbmelabs-authorization-server:master)](https://sonarcloud.io/dashboard/index/ch.tbmelabs:tbmelabs-authorization-server:master)
+[![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=authorization-server&metric=alert_status)](https://sonarcloud.io/dashboard?id=authorization-server)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c005d025d2954de7880f902182b18de2)](https://www.codacy.com/app/bbortt_2/tbmelabs-authorization-server?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=tbmelabs/tbmelabs-authorization-server&amp;utm_campaign=Badge_Grade)
 
 ### Prerequisites
 
