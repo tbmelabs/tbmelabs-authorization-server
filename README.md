@@ -12,14 +12,27 @@ Make sure to install the following software before starting:
 
 * [Java Development Kit 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html): [This guide](https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html) leads you through the installation.
 * [Maven](https://maven.apache.org/download.cgi): Have a look at [this page](https://maven.apache.org/install.html) for any help while installing.
+* [PostgreSQL](https://www.postgresql.org/download/): Installation guide is located right in the download page.
+* [NodeJS and npm](https://nodejs.org/en/download/): Please follow the installer.
 
 ### Installing
 
-This project does not need any special installation steps.
+#### PostgreSQL
+
+Before executing the application you must prepare the database. There are several scripts located in src/main/resources/db/scripts. For instance `test_database.sql` is required to setup the integration test database.
+If you do not have a local redis cluster you might want to use a PostgreSQL token store. To prepare the database use the script `jdbc_token_store.sql`.
 
 ## Running the tests
 
-There are no tests associated with this project.
+### Frontend
+
+The frontend project is located in src/main/webapp. Please use [Yarn](https://yarnpkg.com/lang/en/) for all installation/testing etc. You can install yarn with npm, `npm install -g yarn` or via maven, executing `mvn package -Pwebpack`.
+Navigate into the folder and take a look at the file `package.json` which contains a script section. It may give you an idea about the different use cases.
+
+### Backend
+
+Execute unit-tests by running `mvn test`. They are managed by the [maven-surefire-plugin](https://maven.apache.org/surefire/maven-surefire-plugin/).
+Integration-tests start with `mvn verify` using the [maven-failsafe-plugin](https://maven.apache.org/surefire/maven-failsafe-plugin/).
 
 ## Deployment
 
@@ -28,6 +41,9 @@ This project is deployed using maven. Run `mvn clean install` to install the art
 ## Built With
 
 * [Maven](https://maven.apache.org/) - A software project management and comprehension tool.
+* [Yarn](https://yarnpkg.com/lang/en/) - Fast, reliable, and secure dependency management.
+* [Sprint](https://spring.io/) - The source for modern java.
+* [Angular](https://angularjs.org/) - Clientside JavaScript web framework.
 
 ## Contributing
 
@@ -42,6 +58,10 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 * **Timon Borter** - *Initial work* - [bbortt](https://github.com/bbortt)
 
 See also the list of [contributors](https://github.com/tbmelabs/tbme-tv/contributors) who participated in this project.
+
+## Hat Tips
+
+* To [swaechter](https://github.com/swaechter) for the Angular-Server-Side-Rendering in `AngularUniversalRenderEngine.java`. Original code is in [this repository](https://github.com/swaechter/angularj-universal).
 
 ## License
 
