@@ -14,24 +14,20 @@ branches:
   - master
   - development
 
-env:
-  global:
-    - secure: "ZCkwwo17a8Ow0Q/pAo7HZoNnvz1Q2Xc61gvS/IUBb/b4abgSDtnlOG8V1ClehTA/rfw0Hzk+Xt8mjBfIsXGmjkr84AunuDhJkpPmPcsyxfgR9heGIXZVT6ElvkaqxBBxvOOsQeVOdQwj7zBK61MRBcH9elGhOnV6SBOleoJUSc/+IphGKMZAnxK55FJB6vOqT/ER6c99q/eRsXEvsCcoLC8Q79t6iuE4Bu2agLbKa/HVu3x3+w6xQvG5SsxFZi3aXs7rDaIURFy43pExkwztahQtoRJu3JypsdO5A/l4CDMb8MQN501ZA0Xx8kiIS4pZ2ha0h6P65M5dFv+kDb5A27qJXyv2aCp624dfBUYLkxNVQVnAq0ne743PxWYS5R6YlhH60n3D2YCh2ig7dAGpYFUOUm9A+MvK9DXk0tv1cbDmSdOyzlII56AdnoqV2G1WdkpgJDAzPFnzEL/lgfK7DIrPM0Yp2jzMd7I0WAXeduhuqwb2NVocZa/h2ksXo5cqA7NqejAtfP5jIkaVvaKYacUz60chelSFZmlOSsMbqCEP+FeLzbVBSj+ulInQAwOvMMaVmVVP/yVm3PpUrJB9xZI4vVUcIQF/9DLYOaUFaZL3qGlWoPjhq8yjXllZzxF9MG8E19mNKkdwzkWzoTwUeYaVDgrvwb/13LP0UMNMUUc="
-
 addons:
   chrome: stable
   sonarcloud:
     organization: "tbmelabs-github"
     token:
-      secure: ${SONAR_TOKEN}
+      secure: "m6YtJXyy+gZR1HBrK+kMI8yueXztQ3l0A4aaIO3p+VUviVIsPzYVCuTkZvXdOUpI/w54QKI5wuLdCBeHtfcUWCWrAEfT2DNkz68ENZakiS4Mu4LesQe/d2aWKpzIqPkibp68flnccY9whgX/uYayHha93nuN1j9XmjSKRInj+NSZhzVwZb3DNH6eq1YF+Pz0yVQHvOUoE1Dd8KF1kYBPUMzxVQSpOi0CiwLydBNUK3b4QT4wf5wMLYjELU3Ljl8YqbN4sTMCiR4FGstnOS3fmwe1rCjcmqfof6XO5ro2n+1JKQLdHVMbH6aEFnr21nAsebArDeVSDwGTsaSFg8Vt14HeSW8evWpG+XEINQT9wO9klRXe4cIvN4rUNUNeWVA9h+tjzfVwANVu/byW6qejrqKyiP4tHpepD9gsVTAUiAL0QqH+qudxWLzNBz5uDksdMmexhX/usAxeS51kZDC9xIX1XmzhJiQnPW3gdWkw3guBVYUj9Vby5z1Xz80rimUIr+dGuTqa/2cwjjtkZUpuJdpc6OrTmvmMNIVkWNuyjvifSuVZYZcd6DiRj1cwBtBuo1v07rF0rP5s+TduGze8IMMv08fh1qX6n6oTsFyob8HkVC2T0W9bDVUy08dbK0M+VC47le5HQd+CvZTPW4es45uddRa+6NUBRNvze171RP4="
 
 services:
   - postgresql
 
 before_script:
-  - psql -c "CREATE DATABASE auth_test_database;" -U postgres
-  - psql -c "CREATE USER auth_test_user WITH PASSWORD 'auth_test_user_password';" -U postgres
-  - psql -c "GRANT ALL PRIVILEGES ON DATABASE auth_test_database TO auth_test_user;" -U postgres
+  - psql -c "CREATE DATABASE authorization_server_integration;" -U postgres
+  - psql -c "CREATE USER authorization_server_integration_user WITH PASSWORD 'authorization_server_integration_user_password';" -U postgres
+  - psql -c "GRANT ALL PRIVILEGES ON DATABASE authorization_server_integration TO authorization_server_integration_user;" -U postgres
 
 script:
   - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Pprod

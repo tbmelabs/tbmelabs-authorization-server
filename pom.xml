@@ -39,9 +39,9 @@
         <ch.tbmelabs.version>1.0.0-SNAPSHOT</ch.tbmelabs.version>
 
         <!-- org.flyway default properties during post-integration-test cleanup -->
-        <flyway.url>jdbc:postgresql://localhost:5432/auth_test_database</flyway.url>
-        <flyway.user>auth_test_user</flyway.user>
-        <flyway.password>auth_test_user_password</flyway.password>
+        <flyway.url>jdbc:postgresql://localhost:5432/authorization_server_integration</flyway.url>
+        <flyway.user>authorization_server_integration_user</flyway.user>
+        <flyway.password>authorization_server_integration_user_password</flyway.password>
 
         <!-- Dependency configuration -->
         <commons-validator.commons-validator.version>1.6</commons-validator.commons-validator.version>
@@ -56,6 +56,10 @@
         <com.github.eirslett.frontend-maven-plugin.yarn.version>v1.9.4</com.github.eirslett.frontend-maven-plugin.yarn.version>
         <com.github.eirslett.frontend-maven-plugin.installDirectory>target/node</com.github.eirslett.frontend-maven-plugin.installDirectory>
         <com.github.eirslett.frontend-maven-plugin.workingDirectory>src/main/webapp</com.github.eirslett.frontend-maven-plugin.workingDirectory>
+
+        <!-- Sonar configuration -->
+        <sonar.projectKey>authorization-server</sonar.projectKey>
+        <sonar.projectName>Authorization-Server</sonar.projectName>
     </properties>
 
     <parent>
@@ -249,7 +253,10 @@
 
                 <executions>
                     <execution>
-                        <id>default</id>
+                        <id>build-push-image</id>
+
+                        <phase>deploy</phase>
+
                         <goals>
                             <goal>build</goal>
                             <goal>push</goal>

@@ -1,12 +1,12 @@
 -- create database
-CREATE DATABASE auth_token_database;
+CREATE DATABASE authorization_token_server_database;
 
 -- user configuration
-CREATE USER auth_token_user WITH PASSWORD 'auth_token_user_password';
-GRANT CONNECT ON DATABASE auth_token_database TO auth_token_user;
+CREATE USER authorization_token_server_user WITH PASSWORD 'authorization_token_server_user_password';
+GRANT CONNECT ON DATABASE authorization_token_server_database TO authorization_token_server_user;
 
 -- connect to created database
-\connect auth_token_database
+\connect authorization_token_server_database
 
 -----------------------------------
 ---			TOKEN STORE			---
@@ -25,7 +25,7 @@ ALTER TABLE ONLY oauth_access_token
     ADD CONSTRAINT oauth_access_token_pkey PRIMARY KEY (token_id);
 
 GRANT SELECT, INSERT, UPDATE, DELETE
-	ON oauth_access_token TO auth_token_user;
+	ON oauth_access_token TO authorization_token_server_user;
 
 -----------------------------------
 ---		  REFRESH TOKENS		---
@@ -40,4 +40,4 @@ ALTER TABLE ONLY oauth_refresh_token
     ADD CONSTRAINT oauth_refresh_token_pkey PRIMARY KEY (token_id);
 
 GRANT SELECT, INSERT, UPDATE, DELETE
-ON oauth_refresh_token TO auth_token_user;
+ON oauth_refresh_token TO authorization_token_server_user;

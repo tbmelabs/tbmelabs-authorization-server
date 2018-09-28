@@ -1,6 +1,6 @@
 -- create database
-CREATE DATABASE auth_test_database;
+CREATE DATABASE authorization_server_integration;
 
 -- user configuration
-CREATE USER auth_test_user WITH PASSWORD 'auth_test_user_password';
-GRANT ALL PRIVILEGES ON DATABASE auth_test_database TO auth_test_user;
+CREATE USER authorization_server_integration_user WITH PASSWORD 'authorization_server_integration_user_password';
+GRANT ALL PRIVILEGES ON DATABASE authorization_server_integration TO authorization_server_integration_user;
