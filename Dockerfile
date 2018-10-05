@@ -1,11 +1,13 @@
 FROM openjdk:8-jre
 MAINTAINER TBME Labs <info@tbmelabs.ch>
 
-ENTRYPOINT ["/usr/bin/java", "-jar", "/usr/share/authorization-server/authorization-server.jar"]
+ENTRYPOINT ["/usr/bin/java", "-jar", "/home/authorizationserver/authorization-server.jar"]
 
-# Maven dependencies
-ADD target/lib           /usr/share/authorization-server/lib
-
-# Java service
 ARG JAR_FILE
-ADD target/${JAR_FILE} /usr/share/authorization-server/authorization-server.jar
+ADD target/${JAR_FILE} /home/authorizationserver/authorization-server.jar
+
+RUN useradd -ms /bin/bash authorizationserver
+RUN chown authorizationserver /home/authorizationserver/authorization-server.jar
+
+USER authorizationserver
+WORKDIR /home/authorizationserver
