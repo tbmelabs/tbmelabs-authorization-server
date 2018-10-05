@@ -26,6 +26,19 @@ addons:
     - postgresql-10
     - postgresql-client-10
 
+deploy:
+  - provider: script
+    script: mvn dockerfile:push
+    on:
+      branch: development
+
+env:
+  global:
+    - secure: "M8xXgZ8lbKr/DHKe0N/SSVBBHvQzbCyMlJ871Bqb7FvmnWEFcm5LH4GHGRYtyVRbwesAMPd+4mMFsJx+QB2tfZorMylKUmPSBTmrvLXy5AfwHa71VTVeXQAq0XNV2MmBVDULRD1kUfCAGhFZYOAJ7oSmF37Sz/5pG0lredwyzGm6rhdnh3bWR9QcJZfhXyNS/AIkE87fgEuRTPka6OhvlrFvjIH6pb0+/8FJ/Inz5eq+GNoZauQUXnl78rNF8p48JHAxzFg/VTO+30X/yGTLRbglC1Dv+SRA4ob0Fkl3qqOiJy6mrpeWY7LuwgRJICzlox35snotMJQih1GpG4Fpm52Dt6FRF/dFAoUxbWd5VFUyvsAzqqcFuaxho48C7KvpolUZqvJJ25yKpBxfKlHtSKwaSBsFrg3H0u1CnH8DgkJHKC0yLszhgRuM09lHNg6u4ShXiMamSCbJO5AtFjSh5XVQtzMhbGOiaTkk5gC8vGuoxds6lJdF5nDmy7zvugaFGRyoETGJNjUFX4e9pIj7LCpwoJ8iBxdPRBsP4u1qYRekJCgpqKt7pAuXpzkAvPv7rEOieW+ddF6pCeX+sq5zyzRw2n6XXm7dyALB9RzDryS4ZTlsVgDkI29xeRzvFgYNu1ydk/gD1qj4L8C4zwlVZNJwfCcddWeoIjVt8hFL7v4="
+    # ^^ DOCKER_USERNAME
+    - secure: "BRAxiewXbIiYe2EaVQjFAmE7z+Hmi354UURJ/csOFO0xeNe+O2eSSXtPs8L8t7stnHcxTkUaR045Rcm+flMsloaND85Km1zALU5Hx5mhV7sjKV8zuzPWVFbDjielw/FxI662IEy/jXSqeLO5qYvt5R6346GUQ2yP2RDUT99XivOvM6lQLRFhPElBLgfdS+LPe9GvvA/+RJgHVwS9cmnIzDN5cJRzoeehJNf36cEA7CwZ1/f+LNU47EqNugEM79HLUtWCFKv9VUec4NZDyB1xp0lOQunHXwezoXPgVnOfmmnVmvZldFCSOuv8W1LlqyFJNnw8SRXHIXCQ3Ywvl91KC6dqJURVLdS3ejJYAjssbnNUnpLVwIQPqN1RzLAOdAdMehkea3W4Ntr1AhZGrBKyGnfcDkZk+IbmMGRDCYIMhFR404q1HgzRTQYvXm3d3VRRChirBqzwggi4y6CtQmBdJkguUU302Wu05qoLASAy1E2V/E2ArXIJfvirUT9dm2lK5uk4fdHc71GrNWxjjLAMyAzZRPV0jyUn+amlVsNUQfDR8iAqEPqv7XvQPxZnKAD4X8YhLgsHtX9tjqzbYkl/oIgwFyLj7AqMfQN1EZuvOk3euEaHzyTbi6QFeF2JOzhpWXEqj/kTEI6w9rjMoKl+kj62MptC2IGu8Z2EbRh/jhc="
+    # ^^ DOCKER_PASSWORD
+
 before_script:
   - sudo sed -i 's/port = 5433/port = 5432/' /etc/postgresql/10/main/postgresql.conf
   - sudo cp /etc/postgresql/{9.2,10}/main/pg_hba.conf
@@ -33,9 +46,10 @@ before_script:
   - psql -c "CREATE DATABASE authorization_server_integration;" -U postgres
   - psql -c "CREATE USER authorization_server_integration_user WITH PASSWORD 'authorization_server_integration_user_password';" -U postgres
   - psql -c "GRANT ALL PRIVILEGES ON DATABASE authorization_server_integration TO authorization_server_integration_user;" -U postgres
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
 script:
-  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Pprod
+  - mvn clean install dockerfile:build sonar:sonar -Pprod
 
 cache:
   directories:

@@ -35,9 +35,6 @@
         <!-- General configuration -->
         <start-class>ch.tbmelabs.authorizationserver.Application</start-class>
 
-        <!-- TBME Labs specific configuration -->
-        <ch.tbmelabs.version>1.0.0-SNAPSHOT</ch.tbmelabs.version>
-
         <!-- org.flyway default properties during post-integration-test cleanup -->
         <flyway.url>jdbc:postgresql://localhost:5432/authorization_server_integration</flyway.url>
         <flyway.user>authorization_server_integration_user</flyway.user>
@@ -133,13 +130,6 @@
             <groupId>javax.interceptor</groupId>
             <artifactId>javax.interceptor-api</artifactId>
             <version>${javax.interceptor.javax.interceptor-api.version}</version>
-        </dependency>
-
-        <!-- DOTO: Update on release -->
-        <!-- https://oss.sonatype.org/content/repositories/snapshots/ch/tbmelabs/actuator-endpoints-security-utils/ -->
-        <dependency>
-            <groupId>ch.tbmelabs</groupId>
-            <artifactId>actuator-endpoints-security-utils</artifactId>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-configuration-processor -->
@@ -265,11 +255,12 @@
                 </executions>
 
                 <configuration>
-                    <repository>tbmelabs/tbmelabs-authorization-server</repository>
-                    <tag>${project.version}</tag>
                     <buildArgs>
                         <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
                     </buildArgs>
+
+                    <repository>tbmelabs/tbmelabs-authorization-server</repository>
+                    <tag>${project.version}</tag>
                 </configuration>
             </plugin>
         </plugins>
