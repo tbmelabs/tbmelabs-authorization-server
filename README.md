@@ -5,6 +5,7 @@
 [![Build Status](https://travis-ci.org/tbmelabs/tbmelabs-authorization-server.svg?branch=master)](https://travis-ci.org/tbmelabs/tbmelabs-authorization-server)
 [![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=authorization-server&metric=alert_status)](https://sonarcloud.io/dashboard?id=authorization-server)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c005d025d2954de7880f902182b18de2)](https://www.codacy.com/app/bbortt_2/tbmelabs-authorization-server?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=tbmelabs/tbmelabs-authorization-server&amp;utm_campaign=Badge_Grade)
+[![Docker Pulls](https://img.shields.io/docker/pulls/tbmelabs/tbmelabs-authorization-server.svg)](https://hub.docker.com/r/tbmelabs/tbmelabs-authorization-server)
 
 ### Prerequisites
 
