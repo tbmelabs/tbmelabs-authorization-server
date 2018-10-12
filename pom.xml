@@ -31,6 +31,14 @@
         </developer>
     </developers>
 
+    <!-- DOTO: Update on release -->
+    <!-- https://oss.sonatype.org/content/repositories/snapshots/ch/tbmelabs/server-parent/ -->
+    <parent>
+        <groupId>ch.tbmelabs</groupId>
+        <artifactId>server-parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
     <properties>
         <!-- General configuration -->
         <start-class>ch.tbmelabs.authorizationserver.Application</start-class>
@@ -53,17 +61,12 @@
         <com.github.eirslett.frontend-maven-plugin.yarn.version>v1.9.4</com.github.eirslett.frontend-maven-plugin.yarn.version>
         <com.github.eirslett.frontend-maven-plugin.installDirectory>target/node</com.github.eirslett.frontend-maven-plugin.installDirectory>
         <com.github.eirslett.frontend-maven-plugin.workingDirectory>src/main/webapp</com.github.eirslett.frontend-maven-plugin.workingDirectory>
+        <com.spotify.dockerfile-maven-plugin.version>1.4.7</com.spotify.dockerfile-maven-plugin.version>
 
         <!-- Sonar configuration -->
         <sonar.projectKey>authorization-server</sonar.projectKey>
         <sonar.projectName>Authorization-Server</sonar.projectName>
     </properties>
-
-    <parent>
-        <groupId>ch.tbmelabs</groupId>
-        <artifactId>server-parent</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
-    </parent>
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-mail -->
@@ -240,6 +243,7 @@
             <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>dockerfile-maven-plugin</artifactId>
+                <version>${com.spotify.dockerfile-maven-plugin.version}</version>
 
                 <executions>
                     <execution>
