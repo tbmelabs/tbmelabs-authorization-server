@@ -35,12 +35,12 @@ export class TitleService {
       map((data) => {
         if (data.title) {
           // If a route has a title set (e.g. data: {title: "Foo"}) then we use it
-          return data.title;
+          return `${SEPARATOR} ${data.title}`;
         }
 
         return '';
       })
     )
-      .subscribe((pathString) => this.titleService.setTitle(`${APP_TITLE} ${SEPARATOR} ${pathString}`));
+      .subscribe((pathString) => this.titleService.setTitle(`${APP_TITLE} ${pathString}`));
   }
 }
