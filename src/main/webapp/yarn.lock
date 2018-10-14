@@ -255,6 +255,13 @@
   dependencies:
     "@types/jasmine" "*"
 
+"@types/jquery@^3.3.17":
+  version "3.3.17"
+  resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.3.17.tgz#0903a65889625facd424f19c6c0a03fddf00b4c6"
+  integrity sha512-4KeUvF8TCKc6akcKVqS8ld0nY4uILk1wBdK6/2Zlz3AjNNXhVimVL04X+sAIgm+c3Wy2KNXI0ANXFkezMNSq5Q==
+  dependencies:
+    "@types/sizzle" "*"
+
 "@types/node@^6.0.46":
   version "6.0.116"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-6.0.116.tgz#2f9cd62b4ecc4927e3942e2655c182eecf5b45f1"
@@ -274,6 +281,11 @@
   version "3.0.12"
   resolved "https://registry.yarnpkg.com/@types/selenium-webdriver/-/selenium-webdriver-3.0.12.tgz#6affe5aed1ba379175075a889adbe2bc3aa62159"
   integrity sha512-hYn+eoOehVUIdMwp5h34ZsGAO1ydja10GDup4BwyoFCdcH5MQ35nQq+AInSaBMEMopD5hEooFCyKo2Pajbe1ag==
+
+"@types/sizzle@*":
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/@types/sizzle/-/sizzle-2.3.2.tgz#a811b8c18e2babab7d542b3365887ae2e4d9de47"
+  integrity sha512-7EJYyKTL7tFR8+gDbB6Wwz/arpGa0Mywk1TJbNzKzHtzbwVmY4HR9WqS5VV7dsBUKQmPNr192jHr/VpBluj/hg==
 
 "@webassemblyjs/ast@1.5.13":
   version "1.5.13"
