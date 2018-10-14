@@ -3,7 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from './ui/home/home.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent, data: {title: 'Welcome to TBME Labs'}},
+  {path: '', component: HomeComponent, data: {title: 'Account'}},
   {path: '**', redirectTo: '/'}
 ];
 
