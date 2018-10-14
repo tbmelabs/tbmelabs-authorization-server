@@ -3,9 +3,9 @@
   "description": "The webapplication for the TBME Labs authorization server.",
   "version": "1.0.0-SNAPSHOT",
   "author": "TBME Labs",
-  "repository": "https://github.com/tbmelabs/tbme-tv.git",
+  "repository": "https://github.com/tbmelabs/tbmelabs-authorization-server.git",
   "bugs": {
-    "url": "https://github.com/tbmelabs/tbme-tv/issues"
+    "url": "https://github.com/tbmelabs/tbmelabs-authorization-server/issues"
   },
   "license": "MIT",
   "scripts": {
