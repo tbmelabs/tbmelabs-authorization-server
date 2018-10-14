@@ -1,8 +1,9 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {AppComponent} from './app.component';
+import {HomeComponent} from './ui/home/home.component';
 
 const routes: Routes = [
+  {path: '', component: HomeComponent, data: {title: 'Welcome to TBME Labs'}},
   {path: '**', redirectTo: '/'}
 ];
 
