@@ -1,13 +1,9 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "defaultProject": "tbme-labs-authorization-server",
   "newProjectRoot": "projects",
-  "cli": {
-    "packageManager": "yarn"
-  },
   "projects": {
-    "tbme-labs-authorization-server": {
+    "tbmelabs-authorization-server": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -73,13 +69,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "tbme-labs-authorization-server:build:production"
+            "browserTarget": "tbmelabs-authorization-server:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "tbmelabs-authorization-server:build:production"
+            }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "tbme-labs-authorization-server:build"
+            "browserTarget": "tbmelabs-authorization-server:build"
           }
         },
         "test": {
@@ -131,7 +132,7 @@
         }
       }
     },
-    "tbme-labs-authorization-server-e2e": {
+    "tbmelabs-authorization-server-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -139,11 +140,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "tbme-labs-authorization-server:serve"
+            "devServerTarget": "tbmelabs-authorization-server:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "tbme-labs-authorization-server:serve:production"
+              "devServerTarget": "tbmelabs-authorization-server:serve:production"
             }
           }
         },
@@ -158,5 +159,9 @@
         }
       }
     }
+  },
+  "defaultProject": "tbmelabs-authorization-server",
+  "cli": {
+    "packageManager": "yarn"
   }
 }

@@ -78,8 +78,7 @@ public class OAuth2AuthorizationServerConfigurationTest {
   @Test
   public void configureAuthorizationServerSecurityConfigurerShouldInitializeCorrectConfiguration()
     throws Exception {
-    AuthorizationServerSecurityConfigurer configurer =
-      Mockito.spy(AuthorizationServerSecurityConfigurer.class);
+    AuthorizationServerSecurityConfigurer configurer = Mockito.spy(new AuthorizationServerSecurityConfigurer());
 
     fixture.configure(configurer);
 

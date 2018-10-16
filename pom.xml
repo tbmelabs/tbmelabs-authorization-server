@@ -49,6 +49,8 @@
         <flyway.password>authorization_server_integration_user_password</flyway.password>
 
         <!-- Dependency configuration -->
+        <com.sun.xml.bind.jaxb-core.version>2.3.1</com.sun.xml.bind.jaxb-core.version>
+        <com.sun.xml.bind.jaxb-impl.version>2.3.1</com.sun.xml.bind.jaxb-impl.version>
         <commons-validator.commons-validator.version>1.6</commons-validator.commons-validator.version>
         <javax.interceptor.javax.interceptor-api.version>1.2.2</javax.interceptor.javax.interceptor-api.version>
         <org.mapstruct.mapstruct-jdk8.version>1.2.0.Final</org.mapstruct.mapstruct-jdk8.version>
@@ -133,6 +135,26 @@
             <groupId>javax.interceptor</groupId>
             <artifactId>javax.interceptor-api</artifactId>
             <version>${javax.interceptor.javax.interceptor-api.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.sun.xml.bind/jaxb-core -->
+        <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-core</artifactId>
+            <version>${com.sun.xml.bind.jaxb-core.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.sun.xml.bind/jaxb-impl -->
+        <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-impl</artifactId>
+            <version>${com.sun.xml.bind.jaxb-impl.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-configuration-processor -->

@@ -1,6 +1,3 @@
-// Credits and thanks:
-//   https://gist.github.com/pini-girit/2303195c240add54ae8ce68d78e0fe03
-//
 import {Injectable} from '@angular/core';
 
 import {Title} from '@angular/platform-browser';
@@ -10,20 +7,22 @@ import {filter, map, switchMap} from 'rxjs/operators';
 const APP_TITLE = 'TBME Labs';
 const SEPARATOR = '|';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class TitleService {
-  static ucFirst(string) {
-    if (!string) {
-      return string;
-    }
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  }
-
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private titleService: Title,
   ) {
+  }
+
+  static ucFirst(string) {
+    if (!string) {
+      return string;
+    }
+    return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
   init() {
